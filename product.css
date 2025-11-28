@@ -1,0 +1,1074 @@
+/* Product Page Variables */
+:root {
+    --duong-tam-primary: #F8C8DC;
+    --duong-tam-secondary: #FF9AA2;
+    --duong-tam-accent: #FFE5E2;
+    --duong-tam-dark: #D48A9A;
+}
+
+/* Product Navigation */
+.product-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+}
+
+.nav-spirit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--duong-tam-dark);
+}
+
+.spirit-mini {
+    font-size: 1.2rem;
+    animation: gentle-bounce 2s ease-in-out infinite;
+}
+
+/* Product Hero Section */
+.product-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--duong-tam-primary) 0%, var(--duong-tam-accent) 50%, #ffffff 100%);
+    z-index: -2;
+}
+
+.mood-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.floating-ingredients {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.ingredient {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.7;
+    animation: float-ingredient 8s ease-in-out infinite;
+}
+
+.ingredient[data-ingredient="strawberry"] {
+    top: 20%; left: 10%;
+    animation-delay: 0s;
+}
+
+.ingredient[data-ingredient="rose"] {
+    top: 15%; right: 15%;
+    animation-delay: 1s;
+}
+
+.ingredient[data-ingredient="apple"] {
+    bottom: 25%; left: 15%;
+    animation-delay: 2s;
+}
+
+.ingredient[data-ingredient="berry"] {
+    bottom: 20%; right: 10%;
+    animation-delay: 3s;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr; /* bigger visual area */
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    align-items: center;
+}
+
+/* Product Visual */
+.product-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.tea-jar-container {
+    position: relative;
+    width: 380px;
+    height: 480px;
+}
+
+.tea-jar {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
+    animation: jar-float 4s ease-in-out infinite;
+}
+
+.jar-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, var(--duong-tam-secondary) 0%, transparent 70%);
+    opacity: 0.3;
+    border-radius: 50%;
+    animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.spirit-interaction {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+}
+
+.spirit-touch {
+    font-size: 2rem;
+    animation: spirit-orbital 6s linear infinite;
+}
+
+/* Product Info */
+.product-info {
+    padding: 2rem;
+}
+
+.mood-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.product-tagline {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stars {
+    color: #FFD700;
+    font-size: 1.2rem;
+}
+
+.rating-text {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.current-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--duong-tam-secondary);
+}
+
+.original-price {
+    font-size: 1.2rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+/* Spirit Message */
+.spirit-message-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+}
+
+.spirit-avatar {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.message-content {
+    flex: 1;
+}
+
+.message {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.spirit-name {
+    color: var(--duong-tam-dark);
+    font-size: 0.9rem;
+}
+
+/* Action Section */
+.action-section {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    border-radius: 50px;
+    padding: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.qty-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: var(--duong-tam-primary);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.qty-btn:hover {
+    background: var(--duong-tam-secondary);
+    transform: scale(1.1);
+}
+
+.qty-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+.btn-add-to-cart {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--duong-tam-primary), var(--duong-tam-secondary));
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 154, 162, 0.4);
+}
+
+.btn-add-to-cart:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 154, 162, 0.6);
+}
+
+/* Product Details */
+.product-details {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+.details-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.detail-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.detail-card h3 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1.1rem;
+}
+
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.ingredient-item {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 15px;
+    background: var(--duong-tam-accent);
+    transition: transform 0.3s ease;
+}
+
+.ingredient-item:hover {
+    transform: translateY(-5px);
+}
+
+.ingredient-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.ingredient-name {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.ingredient-desc {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.brewing-steps {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.brew-step {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--duong-tam-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+/* Spirit Companion */
+.product-companion {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.tam-hoa-spirit {
+    font-size: 3rem;
+    animation: gentle-bounce 3s ease-in-out infinite;
+}
+
+.spirit-dialogue {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    min-width: 200px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.tam-hoa-spirit:hover .spirit-dialogue {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animations */
+@keyframes float-ingredient {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+@keyframes jar-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes glow-pulse {
+    0%, 100% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.4; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@keyframes spirit-orbital {
+    0% { transform: rotate(0deg) translateX(20px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
+}
+
+@keyframes gentle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .product-title {
+        font-size: 2rem;
+    }
+    
+    .action-section {
+        flex-direction: column;
+    }
+    
+    .quantity-selector {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .ingredients-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .spirit-dialogue {
+        left: 0;
+        right: auto;
+    }
+    /* ===== PLACEHOLDER CHO HÌNH ẢNH ===== */
+.jar-placeholder {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--duong-tam-primary), var(--duong-tam-accent));
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: placeholderGlow 3s ease-in-out infinite alternate;
+}
+
+.placeholder-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: gentleBounce 4s ease-in-out infinite;
+}
+
+.placeholder-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Animation cho placeholder */
+@keyframes placeholderGlow {
+    0% {
+        box-shadow: 0 20px 40px rgba(255, 154, 162, 0.3);
+    }
+    100% {
+        box-shadow: 0 20px 50px rgba(255, 154, 162, 0.6);
+    }
+}
+
+@keyframes gentleBounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.05);
+    }
+}
+/* ===== CÁC SẢN PHẨM KHÁC ===== */
+.other-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.other-product-card {
+    background: var(--product-accent);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.other-product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--product-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.other-product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--product-primary);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.other-product-card:hover::before {
+    transform: scaleX(1);
+}
+
+.other-product-card.active {
+    border-color: var(--product-primary);
+    background: var(--product-accent);
+}
+
+.other-product-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.other-product-card:hover .other-product-icon {
+    transform: scale(1.2);
+}
+
+.other-product-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.other-product-price {
+    color: var(--product-secondary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.other-product-mood {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin-top: 0.3rem;
+}
+
+/* ===== PRODUCT GALLERY ===== */
+.product-gallery {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    width: 90px;
+    height: 90px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item.active {
+    border-color: var(--product-secondary);
+    transform: scale(1.1);
+}
+
+.gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--product-accent), white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 12px;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ===== FLOATING INGREDIENTS ===== */
+.floating-ingredients {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.ingredient-float {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.7;
+    animation: floatIngredient 8s ease-in-out infinite;
+}
+
+/* ===== RESPONSIVE CHO CÁC SẢN PHẨM KHÁC ===== */
+@media (max-width: 768px) {
+    .other-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .product-gallery {
+        gap: 0.5rem;
+    }
+    
+    .gallery-item {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .gallery-placeholder {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .other-products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes floatIngredient {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-20px) rotate(120deg);
+    }
+    66% {
+        transform: translateY(10px) rotate(240deg);
+    }
+}
+/* ===== BIẾN MÀU CHO CÁC MOOD ===== */
+:root {
+    /* Dưỡng Tâm */
+    --duong-tam-primary: #F8C8DC;
+    --duong-tam-secondary: #FF9AA2;
+    --duong-tam-accent: #FFE5E2;
+    
+    /* Ngủ Ngon */
+    --ngu-ngon-primary: #A2D2FF;
+    --ngu-ngon-secondary: #CDB4DB;
+    --ngu-ngon-accent: #FFAFCC;
+    
+    /* Thư Giãn */
+    --thu-gian-primary: #C8B6FF;
+    --thu-gian-secondary: #B8C0FF;
+    --thu-gian-accent: #E7C6FF;
+    
+    /* Giải Độc */
+    --giai-doc-primary: #CCD5AE;
+    --giai-doc-secondary: #D4A373;
+    --giai-doc-accent: #E9EDC9;
+    
+    /* Năng Lượng */
+    --nang-luong-primary: #FFB4A2;
+    --nang-luong-secondary: #E5989B;
+    --nang-luong-accent: #FFCDB2;
+    
+    /* Tỉnh Táo */
+    --tinh-tao-primary: #A2D2C8;
+    --tinh-tao-secondary: #83E8B3;
+    --tinh-tao-accent: #C8F4DC;
+    
+    /* Màu mặc định */
+    --product-primary: var(--duong-tam-primary);
+    --product-secondary: var(--duong-tam-secondary);
+    --product-accent: var(--duong-tam-accent);
+}
+
+/* ===== PRODUCT GALLERY ===== */
+.product-gallery {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item.active {
+    border-color: var(--product-secondary);
+    transform: scale(1.1);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.gallery-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--product-accent), white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 12px;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ===== OTHER PRODUCTS GRID ===== */
+.other-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.other-product-card {
+    background: var(--product-accent);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.other-product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--product-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.other-product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--product-primary);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.other-product-card:hover::before {
+    transform: scaleX(1);
+}
+
+.other-product-card.active {
+    border-color: var(--product-primary);
+    background: var(--product-accent);
+}
+
+.other-product-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.other-product-card:hover .other-product-icon {
+    transform: scale(1.2);
+}
+
+.other-product-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.other-product-price {
+    color: var(--product-secondary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.other-product-mood {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin-top: 0.3rem;
+}
+
+/* ===== FLOATING INGREDIENTS ===== */
+.floating-ingredients {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.ingredient-float {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.7;
+    animation: floatIngredient 8s ease-in-out infinite;
+}
+
+/* ===== HERO BACKGROUND DYNAMIC ===== */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.8s ease;
+}
+
+/* ===== JAR GLOW DYNAMIC ===== */
+.jar-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, var(--product-secondary) 0%, transparent 70%);
+    opacity: 0.3;
+    border-radius: 50%;
+    animation: glow-pulse 3s ease-in-out infinite;
+    transition: all 0.8s ease;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes floatIngredient {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-20px) rotate(120deg);
+    }
+    66% {
+        transform: translateY(10px) rotate(240deg);
+    }
+}
+
+@keyframes glow-pulse {
+    0%, 100% { 
+        opacity: 0.2; 
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% { 
+        opacity: 0.4; 
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* ===== MOOD BADGE DYNAMIC ===== */
+.mood-badge {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: badgePulse 2s ease-in-out infinite;
+    transition: all 0.5s ease;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .other-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .product-gallery {
+        gap: 0.5rem;
+    }
+    
+    .gallery-item {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .gallery-placeholder {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .other-products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===== STYLE CHO MOOD SPHERES DÙNG THẺ <a> ===== */
+.mood-spheres-container a.mood-sphere {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+/* Đảm bảo các hiệu ứng hover vẫn hoạt động */
+.mood-spheres-container a.mood-sphere:hover {
+    transform: scale(1.1) translateY(-10px);
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Các style khác giữ nguyên */
+.mood-sphere[data-mood="duong-tam"] {
+    background: radial-gradient(circle at 30% 30%, var(--duong-tam-primary), transparent);
+    box-shadow: 0 0 40px var(--duong-tam-secondary);
+}
+
+.mood-sphere[data-mood="ngu-ngon"] {
+    background: radial-gradient(circle at 30% 30%, var(--ngu-ngon-primary), transparent);
+    box-shadow: 0 0 40px var(--ngu-ngon-secondary);
+}
+
+.mood-sphere[data-mood="thu-gian"] {
+    background: radial-gradient(circle at 30% 30%, var(--thu-gian-primary), transparent);
+    box-shadow: 0 0 40px var(--thu-gian-secondary);
+}
+
+.mood-sphere[data-mood="giai-doc"] {
+    background: radial-gradient(circle at 30% 30%, var(--giai-doc-primary), transparent);
+    box-shadow: 0 0 40px var(--giai-doc-secondary);
+}
+
+.mood-sphere[data-mood="nang-luong"] {
+    background: radial-gradient(circle at 30% 30%, var(--nang-luong-primary), transparent);
+    box-shadow: 0 0 40px var(--nang-luong-secondary);
+}
+
+.mood-sphere[data-mood="tinh-tao"] {
+    background: radial-gradient(circle at 30% 30%, var(--tinh-tao-primary), transparent);
+    box-shadow: 0 0 40px var(--tinh-tao-secondary);
+}
+}
+
+/* Lightbox modal styles */
+.lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);z-index:12000;padding:20px}
+.lightbox.hidden{visibility:hidden;opacity:0;pointer-events:none}
+.lightbox .lightbox-content{max-width:980px;max-height:90vh;display:flex;align-items:center;justify-content:center}
+.lightbox img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+.lightbox-close{position:absolute;top:20px;right:20px;background:rgba(255,255,255,0.06);color:#fff;border:0;padding:10px;border-radius:8px;cursor:pointer}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.06);border:0;color:#fff;padding:12px;border-radius:50%;cursor:pointer}
+.lightbox-nav.left{left:20px}
+.lightbox-nav.right{right:20px}
+
+@media (max-width: 720px){
+    .lightbox img{max-width:95%;max-height:80vh}
+    .lightbox-nav.left{left:8px}
+    .lightbox-nav.right{right:8px}
+}

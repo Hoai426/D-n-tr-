@@ -1,0 +1,69 @@
+<div class="mini-game-overlay">
+    <div class="game-container">
+        <div class="game-header">
+            <h2>🌿 Chọn Lá Trà Của Bạn</h2>
+            <p>Hãy lắng nghe trực giác và chọn một lá bài phù hợp với tâm trạng hiện tại</p>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="leaf-card" data-mood="duong-tam">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="leaf-shape heart"></div>
+                        <div class="leaf-glow"></div>
+                        <div class="card-label">Lá Dưỡng Tâm</div>
+                    </div>
+                    <div class="card-back" style="background: linear-gradient(135deg, var(--duong-tam-primary), var(--duong-tam-secondary))">
+                        <div class="spirit-reveal">🌺</div>
+                        <div class="mood-name">Dưỡng Tâm</div>
+                        <div class="mood-desc">Chăm sóc trái tim</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Repeat for other 5 moods -->
+            <div class="leaf-card" data-mood="ngu-ngon">
+                <!-- Similar structure -->
+            </div>
+            
+            <div class="leaf-card" data-mood="thu-gian">
+                <!-- Similar structure -->
+            </div>
+            
+            <div class="leaf-card" data-mood="giai-doc">
+                <!-- Similar structure -->
+            </div>
+            
+            <div class="leaf-card" data-mood="nang-luong">
+                <!-- Similar structure -->
+            </div>
+            
+            <div class="leaf-card" data-mood="tinh-tao">
+                <!-- Similar structure -->
+            </div>
+        </div>
+        
+        <div class="game-result hidden">
+            <div class="result-animation">
+                <div class="spirit-avatar"></div>
+                <div class="magic-sparkles"></div>
+            </div>
+            <div class="result-content">
+                <h3 class="result-title"></h3>
+                <p class="result-message"></p>
+                <div class="recommended-product">
+                    <div class="product-preview"></div>
+                    <div class="product-info">
+                        <h4 class="product-name"></h4>
+                        <p class="product-desc"></p>
+                        <div class="product-price"></div>
+                    </div>
+                </div>
+                <div class="result-actions">
+                    <button class="btn-explore-mood">Khám phá trà này</button>
+                    <button class="btn-try-again">Chọn lá khác</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

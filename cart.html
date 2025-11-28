@@ -1,0 +1,69 @@
+<div class="cart-page">
+    <div class="cart-container">
+        <header class="cart-header">
+            <h1>🌙 Túi An Yên Của Bạn</h1>
+            <p class="cart-subtitle">Chỉ còn một bước nữa, bạn sẽ có an yên trong tay</p>
+        </header>
+            <link rel="stylesheet" href="cart.css">
+        <div class="cart-content">
+            <div class="cart-items-section">
+                <div class="cart-items" id="cart-items">
+                    <!-- Cart items will be dynamically added here -->
+                </div>
+                
+                <div class="empty-cart-state" id="empty-cart">
+                    <div class="empty-icon">🛒</div>
+                    <h3>Túi An Yên đang trống</h3>
+                    <p>Hãy khám phá các loại trà để tìm sự an yên cho tâm hồn</p>
+                    <button class="btn-explore-teas">Khám phá trà ngay</button>
+                </div>
+            </div>
+
+            <div class="cart-summary">
+                <div class="summary-card">
+                    <h3>Tóm tắt đơn hàng</h3>
+                    
+                    <div class="summary-row">
+                        <span>Tạm tính:</span>
+                        <span id="subtotal">0 ₫</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Phí vận chuyển:</span>
+                        <span id="shipping">0 ₫</span>
+                    </div>
+                    
+                    <div class="summary-row discount-row">
+                        <span>Giảm giá:</span>
+                        <span id="discount">-0 ₫</span>
+                    </div>
+                    
+                    <div class="summary-row total-row">
+                        <strong>Tổng cộng:</strong>
+                        <strong id="total">0 ₫</strong>
+                    </div>
+
+                    <button class="btn-checkout" id="checkout-btn">
+                        <span class="btn-icon">✨</span>
+                        <span class="btn-text">Hoàn thành hành trình</span>
+                    </button>
+
+                    <div class="security-badges">
+                        <div class="badge">🔒 Thanh toán an toàn</div>
+                        <div class="badge">🚚 Giao hàng tận nơi</div>
+                        <div class="badge">💝 Quà tặng đặc biệt</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <!-- Spirit Companion in Cart -->
+        <div class="cart-spirit-companion">
+            <div class="spirit-message-bubble">
+                <p>Mỗi hộp trà là một món quà an yên cho tâm hồn bạn 💖</p>
+                     <script src="cart.js"></script>
+            </div>
+            <div class="spirit-character">🌺</div>
+        </div>
+    </div>
+</div>

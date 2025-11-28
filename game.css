@@ -1,0 +1,484 @@
+/* Mini Game Styles */
+.mini-game-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(10px);
+}
+
+.mini-game-overlay.hidden {
+    display: none;
+}
+
+.game-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 25px;
+    padding: 2rem;
+    max-width: 900px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.game-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.game-header p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+}
+
+.btn-close-game {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.btn-close-game:hover {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.1);
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.leaf-card {
+    width: 100%;
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.leaf-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card-front {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.card-back {
+    background: linear-gradient(135deg, var(--card-color-1), var(--card-color-2));
+    transform: rotateY(180deg);
+    color: white;
+    text-align: center;
+}
+
+/* Leaf Shapes */
+.leaf-shape {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.leaf-shape.heart::before {
+    content: "💖";
+    font-size: 3rem;
+}
+
+.leaf-shape.moon::before {
+    content: "🌙";
+    font-size: 3rem;
+}
+
+.leaf-shape.lotus::before {
+    content: "🪷";
+    font-size: 3rem;
+}
+
+.leaf-shape.leaf::before {
+    content: "🍃";
+    font-size: 3rem;
+}
+
+.leaf-shape.flame::before {
+    content: "🔥";
+    font-size: 3rem;
+}
+
+.leaf-shape.wind::before {
+    content: "💨";
+    font-size: 3rem;
+}
+
+.leaf-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    animation: leaf-glow-pulse 2s ease-in-out infinite alternate;
+}
+
+.card-label {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Card Back Content */
+.spirit-reveal {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+}
+
+.mood-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.mood-desc {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Game Result */
+.game-result {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: none;
+}
+
+.game-result:not(.hidden) {
+    display: block;
+    animation: resultEntrance 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.result-animation {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.spirit-avatar {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: spiritCelebration 1s ease-in-out;
+}
+
+.magic-sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: gold;
+    border-radius: 50%;
+    animation: sparkleFloat 3s ease-in-out infinite;
+}
+
+.result-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.result-message {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.recommended-product {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.product-preview {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--duong-tam-primary), var(--duong-tam-secondary));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.product-desc {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--duong-tam-secondary);
+}
+
+.result-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-explore-mood,
+.btn-try-again {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-explore-mood {
+    background: linear-gradient(135deg, var(--duong-tam-primary), var(--duong-tam-secondary));
+    color: white;
+}
+
+.btn-explore-mood:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 154, 162, 0.4);
+}
+
+.btn-try-again {
+    background: rgba(0,0,0,0.1);
+    color: #333;
+}
+
+.btn-try-again:hover {
+    background: rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+/* Card Entrance Animation */
+.card-entrance {
+    animation: cardEntrance 0.6s ease-out forwards;
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes leaf-glow-pulse {
+    0% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+@keyframes resultEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes spiritCelebration {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.2) rotate(-10deg);
+    }
+    50% {
+        transform: scale(1.3) rotate(10deg);
+    }
+    75% {
+        transform: scale(1.2) rotate(-5deg);
+    }
+}
+
+@keyframes sparkleFloat {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-20px) rotate(180deg);
+    }
+}
+
+/* Card Colors based on mood */
+.leaf-card[data-mood="duong-tam"] .card-back {
+    --card-color-1: var(--duong-tam-primary);
+    --card-color-2: var(--duong-tam-secondary);
+}
+
+.leaf-card[data-mood="ngu-ngon"] .card-back {
+    --card-color-1: var(--ngu-ngon-primary);
+    --card-color-2: var(--ngu-ngon-secondary);
+}
+
+.leaf-card[data-mood="thu-gian"] .card-back {
+    --card-color-1: var(--thu-gian-primary);
+    --card-color-2: var(--thu-gian-secondary);
+}
+
+.leaf-card[data-mood="giai-doc"] .card-back {
+    --card-color-1: var(--giai-doc-primary);
+    --card-color-2: var(--giai-doc-secondary);
+}
+
+.leaf-card[data-mood="nang-luong"] .card-back {
+    --card-color-1: var(--nang-luong-primary);
+    --card-color-2: var(--nang-luong-secondary);
+}
+
+.leaf-card[data-mood="tinh-tao"] .card-back {
+    --card-color-1: var(--tinh-tao-primary);
+    --card-color-2: var(--tinh-tao-secondary);
+}
+
+/* Responsive Game */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .leaf-card {
+        height: 180px;
+    }
+    
+    .game-header h2 {
+        font-size: 2rem;
+    }
+    
+    .result-actions {
+        flex-direction: column;
+    }
+    
+    .recommended-product {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .leaf-card {
+        height: 160px;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+}
+
+.leaf-card:focus {
+    outline: 3px solid rgba(255,255,255,0.12);
+    outline-offset: 6px;
+}

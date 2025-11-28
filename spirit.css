@@ -1,0 +1,115 @@
+/* Tâm Hoa Animations */
+.tam-hoa-entrance {
+    animation: tam-hoa-bloom 2s ease-out forwards;
+}
+
+@keyframes tam-hoa-bloom {
+    0% {
+        transform: scale(0) rotate(-180deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2) rotate(-90deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+.tam-hoa-float {
+    animation: tam-hoa-float 4s ease-in-out infinite;
+}
+
+@keyframes tam-hoa-float {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+    25% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+    75% {
+        transform: translateY(5px) rotate(-3deg);
+    }
+}
+
+/* Petal Effects */
+.petal-fall {
+    position: relative;
+}
+
+.petal-fall::before,
+.petal-fall::after {
+    content: "🌸";
+    position: absolute;
+    font-size: 1rem;
+    opacity: 0;
+    animation: petal-fall 8s linear infinite;
+}
+
+.petal-fall::before {
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.petal-fall::after {
+    right: 20%;
+    animation-delay: 2s;
+}
+
+@keyframes petal-fall {
+    0% {
+        transform: translateY(-100px) rotate(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Spirit Interactions */
+.spirit-hover {
+    transition: all 0.3s ease;
+}
+
+.spirit-hover:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.spirit-click {
+    animation: spirit-bounce 0.6s ease;
+}
+
+@keyframes spirit-bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Mood Transition Effects */
+.mood-transition {
+    animation: mood-shift 1.5s ease-in-out;
+}
+
+@keyframes mood-shift {
+    0% {
+        opacity: 1;
+        filter: blur(0);
+    }
+    50% {
+        opacity: 0.5;
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}

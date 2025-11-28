@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trà Dưỡng Tâm | Hành Trình An Yên</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <!-- Navigation -->
+        <nav class="product-nav">
+        <a href="index.html" class="back-btn">
+            <span>←</span> Về trang chủ
+        </a>
+        <div class="nav-spirit">
+            <div class="spirit-mini" id="nav-spirit-icon">🌺</div>
+            <span id="current-spirit-name">Tâm Hoa đồng hành cùng bạn</span>
+        </div>
+            <!-- Floating controls for product page: music, cart, favorite -->
+            <!-- Buttons moved out to body so CSS fixed corner positions apply consistently -->
+    </nav>
+
+    <!-- Floating controls (fixed position in CSS) -->
+    <button id="music-toggle" class="music-btn" aria-label="Bật/Tắt nhạc">🎵</button>
+    <button id="cart-toggle" class="cart-btn" aria-label="Túi An Yên">👜</button>
+    <button id="favorite-toggle" class="fav-btn" aria-pressed="false" aria-label="Yêu thích">💗</button>
+
+    <!-- Product Hero Section -->
+    <section class="product-hero">
+        <div class="hero-background" id="hero-background">
+            <div class="mood-particles" id="mood-particles"></div>
+            <div class="floating-ingredients" id="floating-ingredients">
+                <!-- Ingredients sẽ được thêm bằng JavaScript -->
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="product-visual">
+                <div class="tea-jar-container">
+                    <img src="assets/images/products/tea-duong-tam.png" alt="" class="tea-jar" id="main-product-image"
+                         onerror="this.style.display='none'; document.querySelector('.jar-placeholder').style.display='flex';">
+                    
+                    <!-- Placeholder khi hình ảnh không tải được -->
+                    <div class="jar-placeholder">
+                        <div class="placeholder-icon" id="placeholder-icon">🌺</div>
+                        <div class="placeholder-text" id="placeholder-text">Trà Dưỡng Tâm</div>
+                    </div>
+                    
+                    <div class="jar-glow" id="jar-glow"></div>
+                    <div class="spirit-interaction">
+                        <div class="spirit-touch" id="spirit-touch">🌺</div>
+                    </div>
+                </div>
+
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="gallery-item active" data-image="1">
+                        <img src="assets/images/products/tea-ngu-ngon (2).png" alt="Góc nhìn 1" class="gallery-image" onerror="this.style.display='none'">
+                        <div class="gallery-placeholder">🌺</div>
+                    </div>
+                    <div class="gallery-item" data-image="2">
+                        <img src="assets/images/products/tea-ngu-ngon (2).png" alt="Góc nhìn 2" class="gallery-image" onerror="this.style.display='none'">
+                        <div class="gallery-placeholder">🍵</div>
+                    </div>
+                    <div class="gallery-item" data-image="3">
+                        <img src="assets/images/products/tea-ngu-ngon (2).png" alt="Góc nhìn 3" class="gallery-image" onerror="this.style.display='none'">
+                        <div class="gallery-placeholder">🌿</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info">
+                <div class="mood-badge" id="mood-badge">
+                    🌺 Mood Dưỡng Tâm
+                </div>
+                
+                <h1 class="product-title" id="product-title">Trà Dưỡng Tâm</h1>
+                <p class="product-tagline" id="product-tagline">Dịu êm tâm hồn, ấm áp trái tim</p>
+                
+                <div class="product-rating">
+                    <div class="stars">★★★★★</div>
+                    <span class="rating-text" id="rating-text">5.0 (128 đánh giá)</span>
+                </div>
+
+                <div class="price-section">
+                    <div class="current-price" id="current-price">45.000 ₫</div>
+                    <div class="original-price" id="original-price">45.000 ₫</div>
+                </div>
+
+                <div class="spirit-message-card">
+                    <div class="spirit-avatar" id="spirit-avatar">🌺</div>
+                    <div class="message-content">
+                        <p class="message" id="spirit-message">"Trái tim bạn đang cần được chăm sóc. Hãy để Tâm Hoa dẫn bạn về sự thanh lọc và an hòa."</p>
+                        <span class="spirit-name" id="spirit-name">- Tâm Hoa</span>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <div class="quantity-selector">
+                        <button class="qty-btn minus">-</button>
+                        <span class="qty-display">1</span>
+                        <button class="qty-btn plus">+</button>
+                    </div>
+                    
+                    <button class="btn-add-to-cart" id="add-to-cart-btn">
+                        <span class="btn-icon">🛒</span>
+                        <span class="btn-text">Thêm vào Túi An Yên</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details -->
+    <section class="product-details">
+        <div class="details-container">
+            <!-- Benefits -->
+            <div class="detail-card">
+                <h3 id="benefits-title">✨ Lợi Ích Tâm Hồn</h3>
+                <ul class="benefits-list" id="benefits-list">
+                    <!-- Benefits sẽ được thêm bằng JavaScript -->
+                </ul>
+            </div>
+
+            <!-- Ingredients -->
+            <div class="detail-card">
+                <h3 id="ingredients-title">🌱 Thành Phần Tự Nhiên</h3>
+                <div class="ingredients-grid" id="ingredients-grid">
+                    <!-- Ingredients sẽ được thêm bằng JavaScript -->
+                </div>
+            </div>
+
+            <!-- Brewing Guide -->
+            <div class="detail-card">
+                <h3>🫖 Cách Pha Hoàn Hảo</h3>
+                <div class="brewing-steps">
+                    <div class="brew-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <strong>Chuẩn bị</strong>
+                            <p id="brew-step-1">Cho 2-3g trà vào ấm, tráng qua nước ấm 85°C</p>
+                        </div>
+                    </div>
+                    <div class="brew-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <strong>Ủ trà</strong>
+                            <p id="brew-step-2">Đổ nước 85°C ngập trà, ủ trong 3-5 phút</p>
+                        </div>
+                    </div>
+                    <div class="brew-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <strong>Thưởng thức</strong>
+                            <p id="brew-step-3">Rót trà ra tách, hít hà hương thơm và thưởng thức</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Products -->
+            <div class="detail-card">
+                <h3>🌿 Các Loại Trà Khác</h3>
+                <div class="other-products-grid" id="other-products">
+                    <!-- Các sản phẩm khác sẽ được thêm bằng JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spirit Companion -->
+    <div class="spirit-companion product-companion">
+        <div class="spirit-character" id="spirit-character">
+            <div class="spirit-dialogue">
+                <p id="spirit-dialogue">Mỗi tách trà là một cái ôm ấm áp cho tâm hồn bạn 💖</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="product.js"></script>
+    <audio id="background-music" loop>
+        <source src="assets/audio/meditation-sound (2).mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        // small script to initialize controls on product page
+        const musicBtnPd = document.getElementById('music-toggle');
+        const cartBtnPd = document.getElementById('cart-toggle');
+        const favBtnPd = document.getElementById('favorite-toggle');
+        const audioPd = document.getElementById('background-music');
+        if (musicBtnPd && audioPd) {
+            let isPlaying = localStorage.getItem('tg_music') === '1';
+            musicBtnPd.setAttribute('aria-pressed', String(isPlaying));
+            musicBtnPd.addEventListener('click', ()=>{
+                isPlaying = !isPlaying;
+                if (isPlaying) audioPd.play().catch(()=>{}); else audioPd.pause();
+                musicBtnPd.setAttribute('aria-pressed', String(isPlaying));
+                localStorage.setItem('tg_music', isPlaying ? '1':'0');
+            });
+        }
+        if (cartBtnPd) cartBtnPd.addEventListener('click', ()=> window.location.href='cart.html');
+        if (favBtnPd) {
+            const favState = localStorage.getItem('tg_favorite') === '1';
+            favBtnPd.setAttribute('aria-pressed', String(favState));
+            if (favState) favBtnPd.textContent = '💖';
+            favBtnPd.addEventListener('click', ()=>{
+                const p = favBtnPd.getAttribute('aria-pressed') === 'true';
+                favBtnPd.setAttribute('aria-pressed', String(!p));
+                favBtnPd.textContent = (!p) ? '💖' : '💗';
+                localStorage.setItem('tg_favorite', (!p) ? '1':'0');
+            });
+        }
+        // update cart count badge on product detail page
+        const updatePdCartCount = () => {
+            const cart = JSON.parse(localStorage.getItem('teaCart')) || [];
+            const count = cart.reduce((s, i) => s + (i.quantity || 0), 0);
+            let badge = cartBtnPd.querySelector('.cart-badge');
+            if (!badge) {
+                badge = document.createElement('span');
+                badge.className = 'cart-badge';
+                badge.style.cssText = 'position:absolute;top:-6px;right:-6px;background:#ff6b6b;color:#fff;border-radius:9999px;padding:2px 6px;font-size:12px;';
+                cartBtnPd.style.position = 'relative';
+                cartBtnPd.appendChild(badge);
+            }
+            badge.textContent = count > 0 ? count : '';
+        };
+
+        updatePdCartCount();
+        window.addEventListener('cartUpdated', updatePdCartCount);
+    </script>
+    <!-- Lightbox modal for large product images -->
+    <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Hình ảnh sản phẩm lớn">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Đóng">✕</button>
+        <button id="lightboxPrev" class="lightbox-nav left" aria-label="Hình trước">◀</button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="Hình ảnh lớn sản phẩm">
+        </div>
+        <button id="lightboxNext" class="lightbox-nav right" aria-label="Hình tiếp theo">▶</button>
+    </div>
+</body>
+</html>

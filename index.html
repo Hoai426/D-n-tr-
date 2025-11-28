@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trà Dưỡng Tâm - Hành Trình An Yên</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add eye-catching fonts (Playfair for headings + Montserrat for UI) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="spirits.css">
+</head>
+<body>
+    <!-- Màn hình chào -->
+    <div id="welcome-screen" class="screen active">
+        <div class="welcome-content">
+            <div class="fog-effect"></div>
+            <div class="water-ripple"></div>
+            <div class="light-rays"></div>
+            <h1 class="welcome-text">Chạm nhẹ để bắt đầu hành trình an yên</h1>
+        </div>
+    </div>
+
+    <!-- Trang chính -->
+    <div id="main-screen" class="screen">
+        <!-- Background layers -->
+        <div class="parallax-bg">
+            <div class="bg-layer layer-1" data-speed="0.1"></div>
+            <div class="bg-layer layer-2" data-speed="0.3"></div>
+            <div class="bg-layer layer-3" data-speed="0.5"></div>
+        </div>
+
+        <!-- 6 Mood Spheres -->
+        <div class="mood-spheres-container">
+    <!-- Trà Dưỡng Tâm -->
+    <a href="product-detail.html?product=duong-tam" class="mood-sphere" data-mood="duong-tam">
+        <div class="sphere-glow"></div>
+        <div class="sphere-icon">🌺</div>
+        <img class="sphere-image" src="assets/images/products/tea-duong-tam.png" alt="Trà Dưỡng Tâm">
+        <span class="sphere-label">Dưỡng&nbsp;Tâm</span>
+    </a>
+
+    <!-- Trà Ngủ Ngon -->
+    <a href="product-detail.html?product=ngu-ngon" class="mood-sphere" data-mood="ngu-ngon">
+        <div class="sphere-glow"></div>
+        <div class="sphere-icon">🌙</div>
+        <img class="sphere-image" src="assets/images/products/tea-ngu-ngon (2).png" alt="Trà Ngủ Ngon">
+        <span class="sphere-label">Ngủ&nbsp;Ngon</span>
+    </a>
+
+    <!-- Trà Thư Giãn -->
+    <a href="product-detail.html?product=thu-gian" class="mood-sphere" data-mood="thu-gian">
+        <div class="sphere-glow"></div>
+        <div class="sphere-icon"> 🪷 </div>
+        <img class="sphere-image" src="assets/images/tea-thu-gian.png.png" alt="Trà Thư Giãn">
+        <span class="sphere-label">Thư&nbsp;Giãn</span>
+    </a>
+
+    <!-- Trà Giải Độc -->
+    <a href="product-detail.html?product=giai-doc" class="mood-sphere" data-mood="giai-doc">
+        <div class="sphere-glow"></div>
+        <div class="sphere-icon">🍃</div>
+        <img class="sphere-image" src="assets/images/tea-giai-doc.png.png" alt="Trà Giải Độc">
+        <span class="sphere-label">Giải Độc</span>
+    </a>
+
+    <!-- Trà Năng Lượng -->
+    <a href="product-detail.html?product=nang-luong" class="mood-sphere" data-mood="nang-luong">
+        <div class="sphere-glow"></div>
+        <div class="sphere-icon">🔥</div>
+        <img class="sphere-image" src="assets/images/tea-nang-luong.png.png" alt="Trà Năng Lượng">
+        <span class="sphere-label">Năng&nbsp;Lượng</span>
+    </a>
+
+    <!-- Trà Tỉnh Táo -->
+         <a href="product-detail.html?product=tinh-tao" class="mood-sphere" data-mood="tinh-tao">
+        <div class="sphere-glow"></div>
+        <div class="sphere-icon">💨</div>
+        <img class="sphere-image" src="assets/images/tea-tinh-tao.png.png" alt="Trà Tỉnh Táo">
+        <span class="sphere-label">Tỉnh&nbsp;Táo</span>
+    </a>
+
+        <!-- Linh thú companion -->
+        <div id="spirit-companion" class="spirit-companion">
+            <div class="spirit-character"></div>
+            <div class="speech-bubble hidden">
+                <p class="spirit-message"></p>
+            </div>
+        </div>
+
+        <!-- Music toggle (moved to top-left via CSS) -->
+       
+        <button id="cart-toggle" class="cart-btn" aria-label="Túi An Yên">👜</button>
+        <!-- Favorite (pink heart) — Túi yêu thích or Quick Favorite -->
+        <button id="favorite-toggle" class="fav-btn" aria-pressed="false" aria-label="Yêu thích">💗</button>
+    </div>
+     <button id="music-toggle" class="music-btn" aria-label="Bật/Tắt nhạc">🎵</button>
+
+    <!-- Mini-game "Chọn Lá" -->
+    <div id="leaf-game" class="mini-game-overlay hidden">
+        <!-- Nội dung mini-game sẽ được thêm sau -->
+    </div>
+    <audio id="background-music" loop>
+        <source src="assets/audio/meditation-sound (2).mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+    <script src="game.js"></script>
+    
+    <script src="cart.js"></script>
+    <script src="product.js"></script>
+    <script>
+        // Initialize favorite button state from localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const favBtn = document.getElementById('favorite-toggle');
+            const toggled = localStorage.getItem('tg_favorite') === '1';
+            if (toggled) { favBtn.setAttribute('aria-pressed', 'true'); favBtn.textContent = '💖'; }
+        });
+    </script>
+
+    </body>
+</html>
